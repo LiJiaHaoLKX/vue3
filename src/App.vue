@@ -1,26 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h3>reactive和ref的细节问题</h3>
+    <h3>m1:{{ m1 }}</h3>
+    <h3>m2:{{ m2 }}</h3>
+    <h3>m3:{{ m3 }}</h3>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { reactive, ref } from '@vue/reactivity'
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  setup() {
+    //通过ref设置数据相应式
+    const m1 = ref('abc')
+    const m2 = reactive({
+
+    })
+    //ref可以传入对象吗
+    const m3 = ref({
+      
+    })
+    return {
+      m1,
+      m2,
+      m3
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
